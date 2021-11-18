@@ -22,19 +22,19 @@ public class MainActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         float height = getResources().getDisplayMetrics().heightPixels;
-
         binding.chartView.getLayoutParams().height = Math.round(height * 2 / 5);
         final ChartsManager manager = new ChartsManager(binding.chartView, getApplicationContext(), viewModel.chartType, viewModel.scale);
         viewModel.setManager(manager);
         viewModel.loadChatData();
+        binding.setViewModel(viewModel);
 
 
-        binding.dayButColumn.setOnClickListener(v -> {
+/*        binding.dayButColumn.setOnClickListener(v -> {
             viewModel.scale = "day";
             manager.updateChart("DataCaloriesOut.json", viewModel.scale);
             binding.chartView.reload();
 
-        });
+        });*/
 
         binding.weekButColumn.setOnClickListener(v -> {
             viewModel.scale = "week";

@@ -1,6 +1,8 @@
 package com.assignment.chartlib;
 
 
+import android.view.View;
+
 import androidx.lifecycle.ViewModel;
 import com.assignment.chartlib.utils.ChartsManager;
 
@@ -20,7 +22,7 @@ public class MainViewModel extends ViewModel {
     }
 
 
-    public void loadDayData() {
+    public void loadDayData(View view) {
         scale = "day";
         manager.updateChart("DataCaloriesOut.json", scale);
         manager.chartView.reload();

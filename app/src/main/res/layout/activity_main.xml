@@ -47,6 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="4sp"
+                android:onClick="@{(v)->viewModel.loadDayData(v)}"
                 android:text="@string/day" />
 
             <Button
