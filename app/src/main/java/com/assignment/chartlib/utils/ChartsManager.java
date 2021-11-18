@@ -117,34 +117,4 @@ public class ChartsManager {
         Map<String, Object> map = gson.fromJson(loadJSONFromAsset(fileName, c), type);
         return map;
     }
-
-    public static ArrayList<String> returnDates(String dataFilename, Context c) {
-        ArrayList<String> dates = new ArrayList<>();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        Map series = ChartsManager.jsonFileToMap(dataFilename, c);
-        for (Object o : (List) series.get("all")) {
-            if (o instanceof Map) {
-                Double d = ((Double) ((Map) o).get("date"));
-                Timestamp timestamp = new Timestamp(d.longValue() * 1000L);
-                String strDate = dateFormat.format(new Date(timestamp.getTime()));
-                dates.add(strDate);
-            }
-        }
-        return dates;
-    }
-
-    public static ArrayList<String> returnSamples(String dataFilename, Context c) {
-        ArrayList<String> samples = new ArrayList<>();
-        String sample;
-        int i;
-        Map series = ChartsManager.jsonFileToMap(dataFilename, c);
-        for (Object o : (List) series.get("all")) {
-            if (o instanceof Map) {
-                i = ((Double) ((Map) o).get("sample")).intValue();
-                sample = String.valueOf(i);
-                samples.add(sample);
-            }
-        }
-        return samples;
-    }
 }

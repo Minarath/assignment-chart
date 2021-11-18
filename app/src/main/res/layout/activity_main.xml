@@ -47,17 +47,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="4sp"
-                android:onClick="@{(v)->viewModel.loadDayData(v)}"
+                android:onClick="@{(v)->viewModel.loadDayData(v,`day`)}"
                 android:text="@string/day" />
 
             <Button
                 android:id="@+id/weekButColumn"
                 android:layout_width="wrap_content"
+                android:onClick="@{(v)->viewModel.loadDayData(v,`week`)}"
                 android:layout_height="wrap_content"
                 android:layout_margin="4sp"
                 android:text="@string/week" />
 
             <Button
+
+                android:onClick="@{(v)->viewModel.loadDayData(v,`month`)}"
                 android:id="@+id/monthButColumn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -66,6 +69,7 @@
 
             <Button
                 android:id="@+id/yearButColumn"
+                android:onClick="@{(v)->viewModel.loadDayData(v,`year`)}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="4sp"

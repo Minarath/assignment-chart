@@ -22,9 +22,9 @@ public class MainViewModel extends ViewModel {
     }
 
 
-    public void loadDayData(View view) {
-        scale = "day";
-        manager.updateChart("DataCaloriesOut.json", scale);
+    public void loadDayData(View view,String data) {
+        scale = data;
+        manager.updateChart("DataCaloriesOut.json", data);
         manager.chartView.reload();
     }
 

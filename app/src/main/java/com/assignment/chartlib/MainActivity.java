@@ -27,32 +27,5 @@ public class MainActivity extends AppCompatActivity {
         viewModel.setManager(manager);
         viewModel.loadChatData();
         binding.setViewModel(viewModel);
-
-
-/*        binding.dayButColumn.setOnClickListener(v -> {
-            viewModel.scale = "day";
-            manager.updateChart("DataCaloriesOut.json", viewModel.scale);
-            binding.chartView.reload();
-
-        });*/
-
-        binding.weekButColumn.setOnClickListener(v -> {
-            viewModel.scale = "week";
-            manager.updateChart("DataCaloriesOut.json", viewModel.scale);
-            binding.chartView.reload();
-        });
-
-        binding.monthButColumn.setOnClickListener(v -> {
-            viewModel.scale = "month";
-            manager.updateChart("DataCaloriesOut.json", viewModel.scale);
-            binding.chartView.reload();
-        });
-
-        binding.yearButColumn.setOnClickListener(v -> {
-            viewModel.scale = "year";
-            manager.updateChart("DataCaloriesOut.json", viewModel.scale);
-            binding.chartView.reload();
-        });
-
     }
 }
